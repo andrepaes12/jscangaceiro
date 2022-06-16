@@ -15,14 +15,21 @@ class NegociacaoController {
     event.preventDefault();
 
     // verificar o tipo
-    console.log(typeof(this._inputData.value));
+    // console.log(typeof(this._inputData.value));
 
-    let negociacao = new Negociacao(
-      this._inputData.value,
-      parseInt(this._inputQuantidade.value),
-      parseFloat(this._inputValor.value)
-    );
+    // let data = new Date(this._inputData.value);
+    // array
+    // let data = new Date(this._inputData.value.split('-'));
+    // usando o replace
+    let data = new Date(this._inputData.value.replace(/-/g, ','));
+    console.log(data);
 
-    console.log(negociacao);
+    // let negociacao = new Negociacao(
+    //   this._inputData.value,
+    //   parseInt(this._inputQuantidade.value),
+    //   parseFloat(this._inputValor.value)
+    // );
+
+    // console.log(negociacao);
   }
 }
