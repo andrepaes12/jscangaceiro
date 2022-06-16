@@ -14,34 +14,15 @@ class NegociacaoController {
     // cancelando a submissão do form
     event.preventDefault();
 
-    // buscar os elementos
-    // let inputData = document.querySelector('#data');
-    // let inputQuantidade = document.querySelector('#quantidade');
-    // let inputValor = document.querySelector('#valor');
+    // verificar o tipo
+    console.log(typeof(this._inputData.value));
 
-    // atalho p/ document.querySelector
-    // let $ = document.querySelector;  //não funciona
-    // mantar o document em seu contexto
-    // let $ = document.querySelector.bind(document);
+    let negociacao = new Negociacao(
+      this._inputData.value,
+      parseInt(this._inputQuantidade.value),
+      parseFloat(this._inputValor.value)
+    );
 
-    // let inputData = $('#data');
-    // let inputQuantidade = $('#quantidade');
-    // let inputValor = $('#valor');
-
-    // console.log(inputData.value);
-
-    // console.log(inputQuantidade.value);
-    // console.log(typeof(inputQuantidade.value));
-    // console.log(parseInt(inputQuantidade.value));
-    
-    // console.log(inputValor.value);
-    // console.log(typeof(inputValor.value));
-    // console.log(parseFloat(inputValor.value));
-
-    // alert('chamei a ação no Controller');
-
-    console.log(this._inputData.value);
-    console.log(parseInt(this._inputQuantidade.value));
-    console.log(parseFloat(this._inputValor.value));
+    console.log(negociacao);
   }
 }
