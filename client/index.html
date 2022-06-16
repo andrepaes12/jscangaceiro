@@ -67,33 +67,16 @@
     <!-- criar 2 instâncias de negociaçào (2 objetos: n1 e n2) -->
     <script>
         var n1 = new Negociacao(new Date(), 5, 700);
-        // atribuindo valor a var n1
-        // n1.quantidade = 10;
-        // console.log(n1.quantidade);
-        // console.log(n1);
-        // calcular o volume
-        // var volume = n1.quantidade * n1.valor;
-        // após criar o método obtemVolume
-        // var volume = n1.obtemVolume();
-        // console.log(volume);
-        // var n2 = new Negociacao();
-        // n2.quantidade = 20;
-        // console.log(n2.quantidade);
-
-        var n1 = new Negociacao(new Date(), 5, 700);
-        // console.log(n1.getData());
-        // console.log(n1.getQuantidade());
-        // console.log(n1.getValor());
-        // console.log(n1.getVolume());
-        //após alterar o método com a sintaxe get:
-        n1.quantidade = 1000; //instrução ignorada (sem msg de erro) devido a propriedade get (leitura)
+        //congelar os dados da instância n1 (método procedural)
+        // Object.freeze(n1);
+        //não consegue modificar e não há msg error
+        n1._quantidade = 1000;
         console.log(n1.data);
         console.log(n1.quantidade);
         console.log(n1.valor);
         console.log(n1.volume);
-        //pode-se modificar o valor
-        n1._quantidade = 10;
-        console.log(n1.quantidade);
+        //verificar se há valor congelado, neste caso retorna True
+        // console.log(Object.isFrozen(n1));
     </script>
     
 </body>
