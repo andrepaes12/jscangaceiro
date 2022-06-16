@@ -64,30 +64,9 @@
 
     <!-- referenciar a classe Negociacao() -->
     <script src="app/domain/negociacao/Negociacao.js"></script>
-    <!-- criar 2 instâncias de negociaçào (2 objetos: n1 e n2) -->
+    <script src="app/controllers/NegociacaoController.js"></script>
+    <script src="app/app.js"></script>
     <script>
-        // var n1 = new Negociacao(new Date(), 5, 700);
-        // //congelar os dados da instância n1 (método procedural)
-        // // Object.freeze(n1);
-        // //não consegue modificar e não há msg error
-        // n1._quantidade = 1000;
-        // console.log(n1.data);
-        // // modificar a data
-        // n1.data.setDate(17); //setar o dia da data, alterando a data
-        // console.log(n1.data);
-        // console.log(n1.quantidade);
-        // console.log(n1.valor);
-        // console.log(n1.volume);
-        //verificar se há valor congelado, neste caso retorna True
-        // console.log(Object.isFrozen(n1));
-
-        //ainda é possível alterar a data
-        // var hoje = new Date();
-        // var n2 = new Negociacao(hoje, 5, 700);
-        // console.log(n2.data);
-        // hoje.setDate(17);
-        // console.log(n2.data);
-
         let hoje = new Date();
         let n1 = new Negociacao(hoje, 5, 700);
         console.log(n1.data);
