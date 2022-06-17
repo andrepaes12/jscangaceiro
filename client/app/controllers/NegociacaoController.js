@@ -31,5 +31,16 @@ class NegociacaoController {
 
     // console.log(diaMesAno);
 
+    // limpar o form
+    this._limpaFormulario();
+
+  }
+
+  // método para limpar o form após clicar no btn incluir
+  _limpaFormulario(){
+    this._inputData.value = '';
+    this._inputQuantidade.value = 1;
+    this._inputValor.value = 0.0;
+    this._inputData.focus();
   }
 }
