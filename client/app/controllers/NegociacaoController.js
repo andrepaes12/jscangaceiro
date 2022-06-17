@@ -6,6 +6,8 @@ class NegociacaoController {
     this._inputData = $('#data');
     this._inputQuantidade = $('#quantidade');
     this._inputValor = $('#valor');
+    // adicionado a prop _negociacoes para receber uma instância de Negociacoes
+    this._negociacoes = new Negociacoes();
   }
 
   adiciona(event){
@@ -19,12 +21,15 @@ class NegociacaoController {
       parseFloat(this._inputValor.value)
     );
 
-    console.log(negociacao.data);
+    // inclui a negociacao
+    this._negociacoes.adiciona(negociacao);
+
+    console.log(this._negociacoes.paraArray());
 
     // chamar o método static
-    let diaMesAno = DateConverter.paraTexto(negociacao.data);
+    // let diaMesAno = DateConverter.paraTexto(negociacao.data);
 
-    console.log(diaMesAno);
+    // console.log(diaMesAno);
 
   }
 }
