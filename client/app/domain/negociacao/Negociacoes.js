@@ -12,6 +12,8 @@ class Negociacoes {
   // ler a lista de negociações
   // retornar o array interno encapsulado pela classe
   paraArray(){
-    return this._negociacoes;
+    // return this._negociacoes;
+    // retornar uma nova referência criada (a info original não poderá ser alterada)
+    return [].concat(this._negociacoes);
   }
 }

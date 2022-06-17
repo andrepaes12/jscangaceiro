@@ -15,6 +15,8 @@ class NegociacaoController {
     event.preventDefault();
 
     this._negociacoes.adiciona(this._criaNegociacao());
+    // teste para apagar a lista
+    this._negociacoes.paraArray().length = 0;
 
     console.log(this._negociacoes.paraArray());
 
