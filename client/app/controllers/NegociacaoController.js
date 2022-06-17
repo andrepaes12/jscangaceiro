@@ -14,24 +14,10 @@ class NegociacaoController {
     // cancelando a submissão do form
     event.preventDefault();
 
-    // chamar o método static
-    let negociacao = new Negociacao(
-      DateConverter.paraData(this._inputData.value),
-      parseInt(this._inputQuantidade.value),
-      parseFloat(this._inputValor.value)
-    );
-
-    // inclui a negociacao
-    this._negociacoes.adiciona(negociacao);
+    this._negociacoes.adiciona(this._criaNegociacao());
 
     console.log(this._negociacoes.paraArray());
 
-    // chamar o método static
-    // let diaMesAno = DateConverter.paraTexto(negociacao.data);
-
-    // console.log(diaMesAno);
-
-    // limpar o form
     this._limpaFormulario();
 
   }
@@ -42,5 +28,15 @@ class NegociacaoController {
     this._inputQuantidade.value = 1;
     this._inputValor.value = 0.0;
     this._inputData.focus();
+  }
+
+  // novo método
+  _criaNegociacao(){
+    // retornar uma instância de negociação
+    return new Negociacao(
+      DateConverter.paraData(this._inputData.value),
+      parseInt(this._inputQuantidade.value),
+      parseFloat(this._inputValor.value)
+    );
   }
 }
