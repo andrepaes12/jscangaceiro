@@ -12,12 +12,9 @@ class NegociacaoController {
     // cancelando a submissão do form
     event.preventDefault();
 
-    let data = new Date(
-      ...this._inputData.value
-      .split('-')
-      // uma instrução não requer bloco {} e nem o termo return
-      .map((item, indice) => item - indice % 2)
-      );
+    let converter = new DateConverter();
+
+    let data = converter.paraData(this._inputData.value);
 
     let negociacao = new Negociacao(
       data,
@@ -25,7 +22,9 @@ class NegociacaoController {
       parseFloat(this._inputValor.value)
     );
 
-    console.log(negociacao);
+    let diaMesAno = converter.paraTexto(negociacao.data);
+
+    console.log(diaMesAno);
 
   }
 }
