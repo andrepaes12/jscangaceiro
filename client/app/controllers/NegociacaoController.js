@@ -18,7 +18,14 @@ class NegociacaoController {
       // uma instrução não requer bloco {} e nem o termo return
       .map((item, indice) => item - indice % 2)
       );
-    console.log(data);
+
+    let negociacao = new Negociacao(
+      data,
+      parseInt(this._inputQuantidade.value),
+      parseFloat(this._inputValor.value)
+    );
+
+    console.log(negociacao);
 
   }
 }
