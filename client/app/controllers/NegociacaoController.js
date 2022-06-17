@@ -15,12 +15,10 @@ class NegociacaoController {
     let data = new Date(
       ...this._inputData.value
       .split('-')
-      .map(function(item, indice){
-        // subtrai quando o indice for 1
-        return item - indice % 2; // 1 % 2 = 1
-      })
+      // uma instrução não requer bloco {} e nem o termo return
+      .map((item, indice) => item - indice % 2)
       );
     console.log(data);
-    
+
   }
 }
