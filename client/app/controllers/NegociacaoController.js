@@ -12,17 +12,17 @@ class NegociacaoController {
     // cancelando a submissão do form
     event.preventDefault();
 
-    let converter = new DateConverter();
-
-    let data = converter.paraData(this._inputData.value);
-
+    // chamar o método static
     let negociacao = new Negociacao(
-      data,
+      DateConverter.paraData(this._inputData.value),
       parseInt(this._inputQuantidade.value),
       parseFloat(this._inputValor.value)
     );
 
-    let diaMesAno = converter.paraTexto(negociacao.data);
+    console.log(negociacao.data);
+
+    // chamar o método static
+    let diaMesAno = DateConverter.paraTexto(negociacao.data);
 
     console.log(diaMesAno);
 
