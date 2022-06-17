@@ -21,7 +21,23 @@ class NegociacaoController {
     // array
     // let data = new Date(this._inputData.value.split('-'));
     // usando o replace
-    let data = new Date(this._inputData.value.replace(/-/g, ','));
+    // let data = new Date(this._inputData.value.replace(/-/g, ','));
+    // spread operator (...): recebe cada elemento do array como um params
+    let data = new Date(
+      ...this._inputData.value
+      .split('-')
+      .map(function(item, indice){
+        // se o índice for = 1 (2o elemento), subtrai 1
+        // if(indice == 1){
+          // array do mês: 0 a 11 (janeiro a dezembro)
+          // return item - 1;
+        // }
+        // return item;
+
+        // otimizando a função (subtrai quando o indice for 1)
+        return item - indice % 2; // 1 % 2 = 1
+      })
+      );
     console.log(data);
 
     // let negociacao = new Negociacao(
